@@ -50,11 +50,19 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      MY_VAR: "Hola soy una variable"
+      MY_VAR: "Hola soy una variable dentro de un job"
 
     steps:
       - name: Print my variable
         run: echo "$MY_VAR"
+
+      - name: Print my respository variable
+        run: echo "${{ vars.MY_VARIABLE }}"
+
+      - name: Print my step variable
+        env:
+          STEP_VAR: Soy una variable a nivel step
+        run: echo "$MY_VAR"        
 
       - name: Checkout code
         uses: actions/checkout@v6
