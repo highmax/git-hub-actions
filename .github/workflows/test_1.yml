@@ -59,10 +59,13 @@ jobs:
       - name: Print my respository variable
         run: echo "${{ vars.MY_VARIABLE }}"
 
+      - name: Print my respository SECRET
+        run: echo "${{ vars.MY_SECRET }}"
+
       - name: Print my step variable
         env:
           STEP_VAR: Soy una variable a nivel step
-        run: echo "$MY_VAR"        
+        run: echo "$STEP_VAR"        
 
       - name: Checkout code
         uses: actions/checkout@v6
