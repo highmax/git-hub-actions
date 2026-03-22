@@ -54,7 +54,7 @@ jobs:
 
     steps:
       - name: Print my variable
-        uses: echo "$MY_VAR"
+        run: echo "$MY_VAR"
 
       - name: Checkout code
         uses: actions/checkout@v6
